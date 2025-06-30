@@ -1,0 +1,331 @@
+/* src/components/Auth/auth.css */
+
+/* Auth Layout */
+.auth-layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--spacing-md);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Auth Form */
+.auth-form {
+  background: var(--background-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-2xl);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Auth Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.auth-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.auth-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.auth-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group:last-of-type {
+  margin-bottom: var(--spacing-xl);
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:invalid {
+  border-color: var(--danger-color);
+}
+
+.form-input:invalid:focus {
+  border-color: var(--danger-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Error Messages */
+.error-message {
+  background-color: var(--danger-light);
+  color: var(--danger-text);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--danger-color);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.error-message::before {
+  content: "⚠️";
+  font-size: var(--font-size-base);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  font-size: var(--font-size-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+/* Button Loading State */
+.btn:disabled .loading-spinner {
+  margin-right: var(--spacing-sm);
+}
+
+/* Link Buttons */
+.link-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+  padding: var(--spacing-sm) 0;
+}
+
+.link-button:hover {
+  color: var(--primary-hover);
+}
+
+.link-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Auth Switch */
+.auth-switch {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Demo Credentials */
+.demo-credentials {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.demo-credentials strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* App Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.auth-form {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-layout {
+    padding: var(--spacing-sm);
+  }
+  
+  .auth-form {
+    padding: var(--spacing-xl);
+  }
+  
+  .auth-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .auth-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    padding: var(--spacing-lg);
+  }
+  
+  .auth-header {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .btn {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Focus states for accessibility */
+.form-input:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-input {
+    border-width: 3px;
+  }
+  
+  .btn--primary {
+    border: 2px solid var(--primary-color);
+  }
+  
+  .error-message {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .auth-form {
+    animation: none;
+  }
+  
+  .btn {
+    transition: none;
+  }
+  
+  .form-input {
+    transition: none;
+  }
+}
